@@ -9,8 +9,25 @@
 <title>Home</title>
 </head>
 <body>
+	<!--  <h1>Hello world! ${person.name}</h1> -->
+	
+	<h1> <a href="${pageContext.request.contextPath}/person/create/"> new</a> </h1>
+	<table border="1">
+	<tr >
+	     <td width="20">Name</td> <td></td> <td></td>
+	<tr>
+	<tr>
+	<c:forEach items="${persons}" var="person">
+         <td> <c:out value = "${person.name}"/>  </td>
+       <td> <a href="${pageContext.request.contextPath}/person/edit/${person.id}"> edit</a> </td>  
+      <td>   <a href="${pageContext.request.contextPath}/person/delete/${person.id}"> delete</a> </td>
+     
+     </tr>
+	</c:forEach>
+	
+	</table>
 
-	<P>Hello world.</p>
+	<P>The time on the server is ${serverTime}.</p>
 
 
 	
